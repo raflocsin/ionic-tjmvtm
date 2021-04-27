@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>APPLIANCE INSTALLMENT PLAN CALCULATOR</h1>
+  <p>
+    This app allows you to calculate for your installment plan for your appliance purchase.
+  </p>
+ 
+<br />
+
+<p>Please enter the price of the appliance:</p>
+  <ion-item>
+    <ion-label>Appliance Price: </ion-label>
+    <ion-input type="number" [(ngModel)]="price"></ion-input>
+  </ion-item>
+
+<p>Please enter the length of Repayment (9, 12 or 24 Months):</p>
+  <ion-item>
+    <ion-label>Length of Repayment: </ion-label>
+    <ion-input type="number" [(ngModel)]="length"></ion-input>
+  </ion-item>
+
+  <button ion-button color="secondary" (click)="calculateIP()">
+    CALCULATE</button>
+
+  <ion-item *ngIf="dpAmount">
+    <h4>Your Downpayment Amount is: Php.  {{dpAmount}} </h4>
+  </ion-item>
+
+   <ion-item *ngIf="lAmount">
+    <h4>Your Total Loan Amount is: Php.  {{lAmount}} </h4>
+  </ion-item>
+
+  <ion-item *ngIf="monPay">
+    <h4>Your Monthly Payment is: Php.  {{monPay}} </h4>
+  </ion-item>
